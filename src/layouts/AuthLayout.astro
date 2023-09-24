@@ -1,5 +1,14 @@
 ---
-import '../style/demo-styling.css'
+import '../styles/global.css'
+
+import { isLoggedIn } from '../utils';
+
+const cookie = Astro.request.headers.get('cookie');
+
+// If the user is not logged in, redirect them to the login page
+if (!isLoggedIn(cookie)) {
+  return Astro.redirect('/login');
+}
 
 export interface Props {
 	title: string;

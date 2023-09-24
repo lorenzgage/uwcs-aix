@@ -1,8 +1,8 @@
 ---
-import Layout from '../layouts/InitLayout.astro';
+import Layout from '../../layouts/InitLayout.astro';
 
 // Component Imports
-import Counter from '../components/Counter';
+import Counter from '../../components/Counter';
 const someProps = {
 	count: 0,
 };
@@ -11,7 +11,7 @@ const someProps = {
 <Layout title="Astro Quickstart">
   <main>
     <Counter {...someProps} client:visible>
-      <h1>Hello, Index!</h1>
+      <h1>Hello, Test Results!</h1>
     </Counter>
   </main>
 </Layout>

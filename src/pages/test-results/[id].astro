@@ -1,0 +1,27 @@
+---
+import Layout from '../../layouts/InitLayout.astro';
+
+// Component Imports
+import Counter from '../../components/Counter';
+const someProps = {
+	count: 0,
+};
+
+export function getStaticPaths() {
+  return [
+    {params: {id: 'order-1'}},
+    {params: {id: 'order-2'}},
+    {params: {id: 'order-3'}},
+  ];
+}
+
+const { id } = Astro.params;
+---
+
+<Layout title="Astro Quickstart">
+  <main>
+    <Counter {...someProps} client:visible>
+      <h1>Hello, {id}!</h1>
+    </Counter>
+  </main>
+</Layout>
